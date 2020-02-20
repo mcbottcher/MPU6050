@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This little script ensures that the kernel I2C drivers are loaded, and it
-# changes permissions on /dev/i2c-0 so you can run the demos as a regular
+# changes permissions on /dev/i2c-1 so you can run the demos as a regular
 # user
 
 sudo modprobe i2c-dev

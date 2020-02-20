@@ -49,6 +49,8 @@ THE SOFTWARE.
 #define FALSE	(0==1)
 #endif
 
+#define I2C_BUS_DEV_FILE_PATH "/dev/i2c-1"
+
 class I2Cdev {
     public:
         I2Cdev();
