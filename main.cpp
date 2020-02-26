@@ -14,6 +14,9 @@ int16_t ax, ay, az;
 int16_t gx, gy, gz;
 
 void setup() {
+
+		accelgyro.setDeviceID(0x45);
+		
     // initialize device
     printf("Initializing I2C devices...\n");
     accelgyro.initialize();
@@ -21,6 +24,9 @@ void setup() {
     // verify connection
     printf("Testing device connections...\n");
     printf(accelgyro.testConnection() ? "MPU6050 connection successful\n" : "MPU6050 connection failed\n");
+
+
+
 }
 
 void loop() {
@@ -34,7 +40,7 @@ void loop() {
     // display accel/gyro x/y/z values
     printf("a/g: %6hd %6hd %6hd   %6hd %6hd %6hd\n",ax,ay,az,gx,gy,gz);
 	
-	sleep(2);
+		sleep(2);
 
 }
 
