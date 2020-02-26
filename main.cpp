@@ -14,8 +14,6 @@ int16_t ax, ay, az;
 int16_t gx, gy, gz;
 
 void setup() {
-
-		accelgyro.setDeviceID(0x45);
 		
     // initialize device
     printf("Initializing I2C devices...\n");
@@ -44,10 +42,35 @@ void loop() {
 
 }
 
+void testloop(){
+	
+	accelgyro.setFullScaleGyroRange(2);
+	uint8_t result = accelgyro.getFullScaleGyroRange();
+	printf("Result of writing 2 is: %d \n\r", result);	
+	sleep(4);
+
+	accelgyro.setFullScaleGyroRange(1);
+	result = accelgyro.getFullScaleGyroRange();
+	printf("Result of writing 1 is: %d \n\r", result);	
+	sleep(4);
+
+	accelgyro.setFullScaleGyroRange(0);
+	result = accelgyro.getFullScaleGyroRange();
+	printf("Result of writing 0 is: %d \n\r", result);	
+	sleep(4);
+
+	accelgyro.setFullScaleGyroRange(3);
+	result = accelgyro.getFullScaleGyroRange();
+	printf("Result of writing 3 is: %d \n\r", result);	
+	sleep(3);
+}
+
+
 int main()
 {
     setup();
     for (;;)
-        loop();
+        //loop();
+				testloop();
 }
 
