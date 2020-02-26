@@ -676,7 +676,6 @@ class MPU6050 {
 
         // WHO_AM_I register
         uint8_t getDeviceID();
-        void setDeviceID(uint8_t id);
         
         // ======== UNDOCUMENTED/DMP REGISTERS/METHODS ========
         
